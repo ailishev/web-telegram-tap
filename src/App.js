@@ -1,40 +1,54 @@
-import { useState } from 'react'
-import './App.css'
+import React, { useEffect, useState } from 'react'
+import Loader from './components/UI/Loader/Loader'
+import LevelProgress from './components/elements/LevelProgress/LevelProgress'
+import PlayerInfo from './components/elements/Players/PlayerInfo/PlayerInfo'
+import TapButton from './components/elements/TapButton/TapButton'
+import TapCounter from './components/elements/TapCounter/TapCounter'
+import './styles/App.scss'
+
 function App() {
 	const [tapCount, setTapCount] = useState(0)
+	const [loading, setLoading] = useState(true)
+	const [playerName, setPlayerName] = useState('Player1')
+	const [playerLevel, setPlayerLevel] = useState(1)
+	const [playerEnergy, setPlayerEnergy] = useState(100)
+	const [playerClaim, setPlayerClaim] = useState(100000)
+	const maxLevel = 10
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setLoading(false)
+		}, 3000)
+		return () => clearTimeout(timer)
+	}, [])
 
 	const handleTap = () => {
 		setTapCount(tapCount + 1)
+		if (tapCount % 10 === 0) {
+			setPlayerLevel(playerLevel + 1)
+		}
+		setPlayerEnergy(playerEnergy - 1)
+	}
+
+	if (loading) {
+		return <Loader />
 	}
 
 	return (
 		<section className='bg-dark text-white min-h-screen flex flex-col items-center justify-start pt-16'>
-			<div className='text-center mb-12 mt-15'>
-				<div className='flex gap-2.5 items-center'>
-					<div className='relative w-10 h-10'>
-						<img
-							src='./assets/coin.png'
-							alt='coin'
-							layout='fill'
-							objectFit='contain'
-						/>
-					</div>
-					<h1 className='text-4xl font-extrabold'>
-						{new Intl.NumberFormat('de-DE').format(tapCount)}
-					</h1>
-				</div>
-			</div>
-			<button
-				onClick={handleTap}
-				className='transition-transform transform rounded-full shadow-lg tap-button'
-				aria-label='Tap button'
-			>
-				<img
-					src='/assets/1.png'
-					alt='button'
-					style={{ width: '200px', height: '200px' }}
-				/>
-			</button>
+			<PlayerInfo
+				name={playerName}
+				level={playerLevel}
+				energy={playerEnergy}
+				claim={playerClaim}
+			/>
+			<TapCounter count={tapCount} />
+			<LevelProgress
+				currentLevel={playerLevel}
+				maxLevel={maxLevel}
+				progress={tapCount % 10}
+			/>
+			<TapButton onTap={handleTap} />
 		</section>
 	)
 }
