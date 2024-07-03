@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import './App.css'
-const tg = window.Telegram.WebApp
 function App() {
 	const [tapCount, setTapCount] = useState(0)
 
