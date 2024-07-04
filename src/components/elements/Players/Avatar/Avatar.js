@@ -1,7 +1,7 @@
-const Avatar = ({ src, alt, name, surname, avatar }) => {
+const Avatar = ({ src, alt, name, surname }) => {
 	return (
 		<div className='absolute top-0 left-0 p-4 flex items-center gap-4'>
-			<img src={avatar} alt={alt} className='w-12 h-12 rounded-xl' />
+			<img src={src} alt={alt} className='w-12 h-12 rounded-xl' />
 			<div className='flex flex-col'>
 				<span className='text-base font-semibold'>
 					{name} {surname}

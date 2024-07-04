@@ -23,6 +23,8 @@ function App() {
 		const fetchData = async () => {
 			const user = tg.initDataUnsafe?.user
 
+			console.log('Telegram User:', user)
+
 			if (user) {
 				setPlayerName(user.first_name)
 				setPlayerLastName(user.last_name)
@@ -54,9 +56,8 @@ function App() {
 	return (
 		<section className='text-white min-h-screen flex flex-col items-center pt-16 w-full'>
 			<Avatar
-				src=''
-				avatar={playerImg}
-				alt={playerName}
+				src={playerImg}
+				alt={`${playerName} ${playerLastName}`}
 				name={playerName}
 				surname={playerLastName}
 			/>
