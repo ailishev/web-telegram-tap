@@ -10,6 +10,7 @@ module.exports = {
 					accent: '#FF0000',
 					progress: '#FED33D',
 					bottombar: '#151623',
+					background: '#1C1F30',
 				},
 			},
 			borderColor: {

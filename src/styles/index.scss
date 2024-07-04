@@ -4,10 +4,20 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+body,
+html {
+	user-select: none;
+	height: 100%;
+}
+img {
+	user-select: none;
+}
 body {
 	margin: 0;
 	font-family: 'Montserrat';
 	color: #fff;
 	background-color: #1a1a1c;
 	touch-action: none;
+	background-image: url('./../../public/assets/background.jpg');
+	background-size: cover;
 }

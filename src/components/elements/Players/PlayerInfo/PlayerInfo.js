@@ -3,7 +3,7 @@ import React from 'react'
 
 const PlayerInfo = ({ name, level, energy, claim }) => {
 	return (
-		<section className='flex flex-col sm:flex-row gap-6 items-center mb-8'>
+		<section className='flex flex-col sm:flex-row gap-6 items-center mt-4'>
 			<div className='flex gap-6 items-center mb-8'>
 				<div className='border border-custom-border px-10 py-3 rounded-full flex items-center justify-end gap-2 '>
 					<img src='./assets/coin.png' alt='coin' className='w-6 h-6' />
