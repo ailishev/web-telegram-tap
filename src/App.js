@@ -10,7 +10,8 @@ import './styles/App.scss'
 function App() {
 	const [tapCount, setTapCount] = useState(0)
 	const [loading, setLoading] = useState(true)
-	const [playerName, setPlayerName] = useState('Nick Name')
+	const [playerName, setPlayerName] = useState('Nick')
+	const [playerLastName, setPlayerLastName] = useState('Name')
 	const [playerLevel, setPlayerLevel] = useState(1)
 	const [playerEnergy, setPlayerEnergy] = useState(100)
 	const [playerClaim, setPlayerClaim] = useState(100000)
@@ -24,6 +25,7 @@ function App() {
 
 			if (user) {
 				setPlayerName(user.first_name)
+				setPlayerLastName(user.last_name)
 				setPlayerImg(user.photo_url)
 			}
 
@@ -51,7 +53,13 @@ function App() {
 
 	return (
 		<section className='text-white min-h-screen flex flex-col items-center pt-16 w-full'>
-			<Avatar src='' avatar={playerImg} alt={playerName} name={playerName} />
+			<Avatar
+				src=''
+				avatar={playerImg}
+				alt={playerName}
+				name={playerName}
+				surname={playerLastName}
+			/>
 			<br />
 			<PlayerInfo
 				name={playerName}
