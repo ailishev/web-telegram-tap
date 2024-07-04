@@ -1,4 +1,3 @@
-// components/elements/LevelProgress/LevelProgress.jsx
 import React from 'react'
 
 const LevelProgress = ({ currentLevel, maxLevel, progress }) => {
@@ -12,9 +11,9 @@ const LevelProgress = ({ currentLevel, maxLevel, progress }) => {
 					</span>
 				</div>
 			</div>
-			<div className='w-full bg-gray-300 rounded-full h-4'>
+			<div className='w-full border border-zinc-600 rounded-full h-4'>
 				<div
-					className=' bg-custom-primary h-4 rounded-full'
+					className='bg-custom-primary h-4 rounded-full transition-all ease-linear duration-300'
 					style={{ width: `${(progress / maxLevel) * 100}%` }}
 				></div>
 			</div>

@@ -9,6 +9,12 @@ module.exports = {
 					secondary: '#FFFFFF',
 					accent: '#FF0000',
 					progress: '#FED33D',
+					bottombar: '#151623',
+				},
+			},
+			borderColor: {
+				custom: {
+					border: '#FFBC23',
 				},
 			},
 		},

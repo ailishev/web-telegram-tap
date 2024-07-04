@@ -4,17 +4,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-html,
-body {
-	overflow: hidden;
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	touch-action: none;
-}
 body {
 	margin: 0;
 	font-family: 'Montserrat';
 	color: #fff;
 	background-color: #1a1a1c;
+	touch-action: none;
 }

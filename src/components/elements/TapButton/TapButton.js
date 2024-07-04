@@ -4,7 +4,7 @@ const TapButton = ({ onTap }) => {
 	return (
 		<button
 			onClick={onTap}
-			className='transition-transform transform rounded-full  tap-button '
+			className='transition-transform transform rounded-full tap-button'
 			aria-label='Tap button'
 		>
 			<img
