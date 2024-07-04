@@ -20,12 +20,13 @@
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
 	},
-  "eslintConfig": {
-    "extends": "react-app",
-    "rules": {
-      "no-unused-vars": "off"
-    }
-  },
+	"eslintConfig": {
+		"extends": "react-app",
+		"rules": {
+			"no-unused-vars": "off",
+			"react-hooks/exhaustive-deps": "off"
+		}
+	},
 	"browserslist": {
 		"production": [
 			">0.2%",

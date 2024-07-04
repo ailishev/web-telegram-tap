@@ -12,16 +12,22 @@ function App() {
 	const [loading, setLoading] = useState(true)
 	const [playerName, setPlayerName] = useState('Nick')
 	const [playerLastName, setPlayerLastName] = useState('Name')
+	const [playerImg, setPlayerImg] = useState('')
 	const [playerLevel, setPlayerLevel] = useState(1)
 	const [playerEnergy, setPlayerEnergy] = useState(100)
 	const [playerClaim, setPlayerClaim] = useState(100000)
-	const [playerImg, setPlayerImg] = useState('')
 	const maxLevel = 10
 
 	const tg = window.Telegram.WebApp
+
 	useEffect(() => {
 		const fetchData = async () => {
-			const user = tg.initDataUnsafe?.user
+			if (!tg.initDataUnsafe) {
+				console.error('Telegram WebApp data is not available.')
+				return
+			}
+
+			const user = tg.initDataUnsafe.user
 
 			console.log('Telegram User:', user)
 
@@ -39,7 +45,7 @@ function App() {
 		}
 
 		fetchData()
-	})
+	}, [])
 
 	const handleTap = () => {
 		setTapCount(tapCount + 1)
