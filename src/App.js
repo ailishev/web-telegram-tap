@@ -12,10 +12,12 @@ function App() {
 	const [loading, setLoading] = useState(true)
 	const [playerName, setPlayerName] = useState('Nick')
 	const [playerLastName, setPlayerLastName] = useState('Name')
-	const [playerImg, setPlayerImg] = useState('')
+	const [playerImg, setPlayerImg] = useState(
+		'https://www.strasys.uk/wp-content/uploads/2022/02/Depositphotos_484354208_S.jpg'
+	)
 	const [playerLevel, setPlayerLevel] = useState(1)
 	const [playerEnergy, setPlayerEnergy] = useState(100)
-	const [playerClaim, setPlayerClaim] = useState(100000)
+	const [playerClaim, setPlayerClaim] = useState(0)
 	const maxLevel = 10
 
 	const tg = window.Telegram.WebApp
@@ -29,12 +31,15 @@ function App() {
 
 			const user = tg.initDataUnsafe.user
 
-			console.log('Telegram User:', user)
+			// console.log('User Data:', user)
 
 			if (user) {
-				setPlayerName(user.first_name)
-				setPlayerLastName(user.last_name)
-				setPlayerImg(user.photo_url)
+				setPlayerName(user.first_name || 'undefined')
+				setPlayerLastName(user.last_name || 'undefined')
+				setPlayerImg(
+					user.photo_url ||
+						'https://www.strasys.uk/wp-content/uploads/2022/02/Depositphotos_484354208_S.jpg'
+				)
 			}
 
 			const timer = setTimeout(() => {
