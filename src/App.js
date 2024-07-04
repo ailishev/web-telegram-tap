@@ -18,25 +18,24 @@ function App() {
 	const maxLevel = 10
 
 	const tg = window.Telegram.WebApp
-	const getName = () => {
-		const name = tg.initDataUnsafe?.user?.first_name
-		setPlayerName(name)
-	}
-	const getAvatar = () => {
-		const avatar = tg.initDataUnsafe?.user?.photo_url
-		setPlayerImg(avatar)
-	}
 	useEffect(() => {
-		getName()
-		getAvatar()
-	}, [])
+		const fetchData = async () => {
+			const user = tg.initDataUnsafe?.user
 
-	useEffect(() => {
-		const timer = setTimeout(() => {
-			setLoading(false)
-		}, 3000)
-		return () => clearTimeout(timer)
-	}, [])
+			if (user) {
+				setPlayerName(user.first_name)
+				setPlayerImg(user.photo_url)
+			}
+
+			const timer = setTimeout(() => {
+				setLoading(false)
+			}, 3000)
+
+			return () => clearTimeout(timer)
+		}
+
+		fetchData()
+	})
 
 	const handleTap = () => {
 		setTapCount(tapCount + 1)

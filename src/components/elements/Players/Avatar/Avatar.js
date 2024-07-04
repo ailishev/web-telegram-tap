@@ -5,7 +5,7 @@ const Avatar = ({ src, alt, name, avatar }) => {
 			<div className='flex flex-col'>
 				<span className='text-base font-semibold'>{name}</span>
 				<span className='text-sm font-medium mt-[-6px] text-zinc-400'>
-					Captain
+					Новичок
 				</span>
 			</div>
 		</div>
