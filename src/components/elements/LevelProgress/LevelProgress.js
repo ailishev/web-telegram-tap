@@ -2,11 +2,11 @@ import React from 'react'
 
 const LevelProgress = ({ currentLevel, maxLevel, progress }) => {
 	return (
-		<div className='w-full max-w-md mx-auto mb-8'>
+		<div className='w-full max-w-md mx-auto mb-8 px-4 sm:px-0'>
 			<div className='flex justify-between text-lg font-semibold mb-2'>
-				<span className='mr-2 text-base'>Bronze</span>
+				<span className='text-base'>Bronze</span>
 				<div className='flex items-center'>
-					<span className='text-zinc-500 mr-2 text-base'>Level: </span>
+					<span className='text-zinc-500 mr-2 text-base'>Level:</span>
 					<span className='text-base'>
 						{currentLevel}/{maxLevel}
 					</span>
