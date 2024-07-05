@@ -14,8 +14,8 @@ const Avatar = ({ src, alt, name, surname }) => {
 			</div>
 			<div className='bg-custom-background py-2 px-4 rounded-xl flex items-center gap-2 backdrop-filter backdrop-blur-md bg-opacity-80'>
 				<div className='relative flex items-center'>
-					<div className='bg-custom-primary w-3.5 h-3.5 rounded-full animate-ping absolute'></div>
-					<div className='bg-custom-primary w-3.5 h-3.5 rounded-full'></div>
+					<div className='bg-custom-circle w-3.5 h-3.5 rounded-full animate-ping absolute'></div>
+					<div className='bg-custom-circle w-3.5 h-3.5 rounded-full'></div>
 				</div>
 				<span className='text-sm font-medium'>1</span>
 			</div>

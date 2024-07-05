@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const TapButton = ({ onTap }) => {
+const TapButton = ({ onTap, coinTap }) => {
 	const [effects, setEffects] = useState([])
 
 	const handleTap = e => {
@@ -12,7 +12,7 @@ const TapButton = ({ onTap }) => {
 
 		const newEffect = {
 			id: Date.now(),
-			value: '+1',
+			value: '+' + coinTap,
 			x,
 			y,
 		}

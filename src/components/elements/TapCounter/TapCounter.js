@@ -1,6 +1,9 @@
 import React from 'react'
 
 const TapCounter = ({ count }) => {
+	const formatNumber = number => {
+		return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+	}
 	return (
 		<div className='text-center mt-15'>
 			<div className='flex gap-2.5 items-center'>
@@ -8,14 +11,11 @@ const TapCounter = ({ count }) => {
 					<img
 						src='./assets/coin.png'
 						alt='coin'
-						layout='fill'
-						objectFit='contain'
+						className='w-full h-full object-contain'
 					/>
 				</div>
 
-				<h1 className='text-3xl font-bold'>
-					{new Intl.NumberFormat('de-DE').format(count)}
-				</h1>
+				<h1 className='text-3xl font-bold'>{formatNumber(count)}</h1>
 			</div>
 		</div>
 	)
