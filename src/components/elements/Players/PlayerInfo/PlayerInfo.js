@@ -15,14 +15,7 @@ const PlayerInfo = ({ name, level, claim, coinTap }) => {
 						</span>
 					</div>
 				</div>
-				<div className='flex-1 border-2 border-custom-card px-4 py-2 rounded-xl flex flex-col items-center justify-center gap-1 bg-custom-card'>
-					<span className='text-xs font-semibold text-gray-400 whitespace-nowrap'>
-						COIN FOR NEXT LVL
-					</span>
-					<div className='flex items-center gap-2'>
-						<span className='font-semibold text-sm'>25K</span>
-					</div>
-				</div>
+
 				<div className='flex-1 border-2 border-custom-card px-4 py-2 rounded-xl flex flex-col items-center justify-center gap-1 bg-custom-card'>
 					<span className='text-xs font-semibold text-gray-400 whitespace-nowrap'>
 						PROFIT PER HOUR
