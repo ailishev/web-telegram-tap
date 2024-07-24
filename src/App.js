@@ -10,8 +10,8 @@ import './styles/App.scss'
 function App() {
 	const [tapCount, setTapCount] = useState(0)
 	const [loading, setLoading] = useState(true)
-	const [playerName, setPlayerName] = useState('Nick')
-	const [playerLastName, setPlayerLastName] = useState('Name')
+	const [playerName, setPlayerName] = useState('Name')
+	const [playerLastName, setPlayerLastName] = useState('Username')
 	const [playerImg, setPlayerImg] = useState(
 		'https://www.strasys.uk/wp-content/uploads/2022/02/Depositphotos_484354208_S.jpg'
 	)
